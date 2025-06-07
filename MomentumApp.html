@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Momentum App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Savate&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Theme Toggle Button -->
+  <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+
+  <!-- First View (Mood Selection) -->
+  <div class="container" id="moodSection">
+    <img src="img/pendulum.gif" alt="Pendulum" class="pendulum" />
+    <h1>Hey, what's your mood today?</h1>
+    <div class="buttons">
+      <button class="mood-button" onclick="selectMood('happy')" type="button">Happy</button>
+      <button class="mood-button" onclick="selectMood('sad')" type="button">Sad</button>
+      <button class="mood-button" onclick="selectMood('overwhelmed')" type="button">Overwhelmed</button>
+      <button class="mood-button" onclick="selectMood('idk')" type="button">IDK</button>
+    </div>
+  </div>
+
+  <!-- Second + Third View -->
+  <div id="nameSection" class="container hidden">
+    <div class="center-wrapper">
+      <!-- Name Input -->
+      <input type="text" id="name" placeholder="What's your name?" />
+      <button id="submitName" type="button">Submit</button>
+
+      <!-- Time & Greeting -->
+      <p id="time" class="hidden"></p>
+      <h2 id="greeting" class="hidden"></h2>
+
+      <!-- Focus Section -->
+      <div id="focus-section" class="hidden">
+        <form id="focus-form">
+          <input type="text" id="focus-input" placeholder="What's your goal today?" required />
+          <button type="submit" id="add-focus-btn" aria-label="Add Focus">
+            <span class="material-icons">add</span>
+          </button>
+        </form>
+        <p id="focus-display" class="hidden"></p>
+      </div>
+
+      <!-- To-Do List Section -->
+      <div class="todo-section hidden" id="todo-section">
+        <h2>Your To-Do List</h2>
+        <div class="todo-input">
+          <input type="text" id="todo-input" placeholder="Add a new task..." />
+          <button id="add-task-btn" type="button">Add</button>
+        </div>
+        <ul id="todo-list"></ul>
+      </div>
+
+      <!-- Quote Section -->
+      <div id="quote-controls" class="hidden">
+        <p id="quote" class="hidden"></p>
+
+        <!-- Edit Quote Button -->
+        <button id="editQuoteBtn" aria-label="Edit Quote">
+          <span class="material-icons">add</span>
+        </button>
+
+        <!-- Quote Input for Editing -->
+        <input type="text" id="quoteEditInput" class="hidden" />
+
+        <!-- Save Quote Button -->
+        <button id="saveQuoteBtn" class="hidden" aria-label="Save Quote">
+          <span class="material-icons">save</span>
+        </button>
+
+        <!-- Refresh Quote Button -->
+        <button id="refreshQuote" class="hidden" aria-label="Refresh Quote">Refresh Quote</button>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
